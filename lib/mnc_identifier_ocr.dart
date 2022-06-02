@@ -8,6 +8,7 @@ class MncIdentifierOcr {
   static Future<dynamic> get startCaptureKtp async {
     try {
       final String? json = await _channel.invokeMethod('startCaptureKtp');
+      //TODO add model
       return json;
     } catch (e) {
       rethrow;
