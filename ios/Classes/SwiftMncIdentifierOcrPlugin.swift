@@ -14,11 +14,17 @@ public class SwiftMncIdentifierOcrPlugin: NSObject, OCRDelegate, FlutterPlugin {
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     self.result = result
     
-    if viewController != nil {
-      let client = OCRClient()
-      client.delegate = self
-      client.showOCRIdentifier(viewController!)
-    }
+    if(call.method == "startCaptureKtp"){
+      let viewController = UIApplication.shared.keyWindow?.rootViewController
+
+      if viewController != nil {
+        let client = OCRClient()
+        client.delegate = self
+        client.showOCRIdentifier(viewController!)
+      }
+    } else {
+        result(FlutterMethodNotImplemented)
+      }
   }
 
   public func ocrResult(_ ktpResult: OCRResultModel!) {

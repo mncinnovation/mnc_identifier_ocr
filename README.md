@@ -17,3 +17,7 @@ Android
 Min SDK 21 app level build.gradle
 <activity android:name="id.mncinnovation.ocr.CaptureOCRActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
+iOS
+Min ios 11.0
+NSCameraUsageDescription
+
