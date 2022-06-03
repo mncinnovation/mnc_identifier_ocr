@@ -49,13 +49,15 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
   }
 
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
-    Log.d("activity result", "got response from native plugin")
-    if (resultCode == Activity.RESULT_OK) {
-      val captureKtpResult = MNCIdentifierOCR.getOCRResult(data)
-      val jsonString: String = Gson().toJson(captureKtpResult)
-      result.success(jsonString)
-      return true
+    if(requestCode == CAPTURE_EKTP_REQUEST_CODE){
+      if (resultCode == Activity.RESULT_OK) {
+        val captureKtpResult = MNCIdentifierOCR.getOCRResult(data)
+        val jsonString: String = Gson().toJson(captureKtpResult)
+        result.success(jsonString)
+        return true
+      }
     }
+    result.error("Invalid request code", "Received request code: $requestCode", "Expected request code: $CAPTURE_EKTP_REQUEST_CODE")
     return false
   }
 
