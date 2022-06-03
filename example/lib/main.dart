@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:mnc_identifier_ocr/mnc_identifier_ocr.dart';
+import 'package:mnc_identifier_ocr/model/ocr_result_model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,17 +15,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _json = '...';
+  OCRResultModel? result;
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> scanKtp() async {
-    String json;
+    OCRResultModel? aa;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      json = await MncIdentifierOcr.startCaptureKtp ?? 'no data';
-    } on PlatformException {
-      json = 'error';
+      aa = await MncIdentifierOcr.startCaptureKtp;
+    } catch (e) {
+      debugPrint('something goes wrong $e');
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -35,7 +34,7 @@ class _MyAppState extends State<MyApp> {
     if (!mounted) return;
 
     setState(() {
-      _json = json;
+      result = aa;
     });
   }
 
@@ -48,7 +47,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Stack(
           children: [
-            Text('Ktp data: $_json'),
+            Text('Ktp data: ${result?.toJson()}'),
             Center(
                 child: ElevatedButton(
                     onPressed: scanKtp, child: const Text('PUSH HERE')))
