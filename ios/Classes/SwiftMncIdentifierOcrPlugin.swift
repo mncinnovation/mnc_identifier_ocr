@@ -22,6 +22,8 @@ public class SwiftMncIdentifierOcrPlugin: NSObject, OCRDelegate, FlutterPlugin {
         let client = OCRClient()
         client.delegate = self
         client.showOCRIdentifier(viewController!)
+      } else {
+        result(FlutterError(code: "Unexpected nil", message: "Mnc-identifier-ocr: Could not retrieve rootViewController", details: "Expected rootViewController to be not nil"))
       }
     } else {
       result(FlutterMethodNotImplemented)

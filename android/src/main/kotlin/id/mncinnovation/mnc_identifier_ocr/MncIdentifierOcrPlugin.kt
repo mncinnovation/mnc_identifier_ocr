@@ -57,7 +57,7 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
         return true
       }
     }
-    result.error("Invalid request code", "Received request code: $requestCode", "Expected request code: $CAPTURE_EKTP_REQUEST_CODE")
+    result.error("Invalid request code", "Mnc-identifier-ocr: Received request code: $requestCode", "Expected request code: $CAPTURE_EKTP_REQUEST_CODE")
     return false
   }
 
