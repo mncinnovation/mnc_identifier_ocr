@@ -1,23 +1,33 @@
-# mnc_identifier_ocr
+# MNC Identifier OCR
 
-A new flutter plugin project.
+A Flutter plugin for Android and iOS for scanning [KTP](https://en.wikipedia.org/wiki/Indonesian_identity_card)
 
-## Getting Started
+## Installation
+### Android
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+This plugin requires Android SDK 21 or higher.
+Add `CaptureOCRActivity` into your `AndroidManifest.xml`
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-Android
-Min SDK 21 app level build.gradle
+```
 <activity android:name="id.mncinnovation.ocr.CaptureOCRActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+```
 
-iOS
-Min ios 11.0
-NSCameraUsageDescription
+### iOS
+
+This plugin requires iOS 11.0 or higher.
+Add `NSCameraUsageDescription` key to your `info.plist` file. Describe why your app needs access to the camera. This is called Privacy - Camera Usage Description in the visual editor.
+
+## Usage
+
+```
+ Future<void> scanKtp() async {
+    try {
+      OcrResultModel res = await MncIdentifierOcr.startCaptureKtp;
+      debugPrint('result: ${res.toString()}');
+    } catch (e) {
+      debugPrint('something goes wrong $e');
+    }
+  }
+```
+
 
