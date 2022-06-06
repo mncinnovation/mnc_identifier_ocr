@@ -5,13 +5,13 @@
 Pod::Spec.new do |s|
   s.name             = 'mnc_identifier_ocr'
   s.version          = '0.0.1'
-  s.summary          = 'A new flutter plugin project.'
+  s.summary          = 'MNC OCR identifier flutter plugin'
   s.description      = <<-DESC
 A new flutter plugin project.
                        DESC
-  s.homepage         = 'http://example.com'
-  s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.homepage         = 'https://github.com/mncinnovation/mnc_identifier_ocr'
+  s.license          = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
+  s.author           = { 'Gifhary Syidhqa Hamim' => 'gifhary.hamim@mncgroup.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
