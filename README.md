@@ -22,6 +22,11 @@ Add `NSCameraUsageDescription` key to your `info.plist` file. Describe why your 
 ## Usage
 
 ```
+import 'package:mnc_identifier_ocr/mnc_identifier_ocr.dart';
+import 'package:mnc_identifier_ocr/model/ocr_result_model.dart';
+
+...
+
  Future<void> scanKtp() async {
     try {
       OcrResultModel res = await MncIdentifierOcr.startCaptureKtp;
