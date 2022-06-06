@@ -15,11 +15,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  OCRResultModel? result;
+  OcrResultModel? result;
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> scanKtp() async {
-    OCRResultModel? aa;
+    OcrResultModel? aa;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {

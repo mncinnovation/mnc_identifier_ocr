@@ -1,85 +1,127 @@
 import 'dart:convert';
 
-import 'package:mnc_identifier_ocr/model/ktp_data_model.dart';
+OcrResultModel ocrResultModelFromMap(String str) =>
+    OcrResultModel.fromMap(json.decode(str));
 
-class OCRResultModel {
-  final String imagePath;
-  final int confidence;
-  final bool isSuccess;
-  final String errorMessage;
-  final KTPDataModel ktpData;
-  OCRResultModel({
-    required this.imagePath,
-    required this.confidence,
+String ocrResultModelToMap(OcrResultModel data) => json.encode(data.toMap());
+
+class OcrResultModel {
+  OcrResultModel({
     required this.isSuccess,
     required this.errorMessage,
-    required this.ktpData,
+    required this.imagePath,
+    required this.ktp,
   });
 
-  OCRResultModel copyWith({
-    String? imagePath,
-    int? confidence,
-    bool? isSuccess,
-    String? errorMessage,
-    KTPDataModel? ktpData,
-  }) {
-    return OCRResultModel(
-      imagePath: imagePath ?? this.imagePath,
-      confidence: confidence ?? this.confidence,
-      isSuccess: isSuccess ?? this.isSuccess,
-      errorMessage: errorMessage ?? this.errorMessage,
-      ktpData: ktpData ?? this.ktpData,
-    );
-  }
+  final bool isSuccess;
+  final String errorMessage;
+  final String imagePath;
+  final Ktp ktp;
 
-  Map<String, dynamic> toMap() {
-    return {
-      'imagePath': imagePath,
-      'confidence': confidence,
-      'isSuccess': isSuccess,
-      'errorMessage': errorMessage,
-      'ktpData': ktpData.toMap(),
-    };
-  }
-
-  factory OCRResultModel.fromMap(Map<String, dynamic> map) {
-    return OCRResultModel(
-      imagePath: map['imagePath'] ?? '',
-      confidence: map['confidence']?.toInt() ?? 0,
-      isSuccess: map['isSuccess'] ?? false,
-      errorMessage: map['errorMessage'] ?? '',
-      ktpData: KTPDataModel.fromMap(map['ktpData']),
-    );
-  }
+  factory OcrResultModel.fromJson(String source) =>
+      OcrResultModel.fromMap(json.decode(source));
 
   String toJson() => json.encode(toMap());
 
-  factory OCRResultModel.fromJson(String source) =>
-      OCRResultModel.fromMap(json.decode(source));
+  factory OcrResultModel.fromMap(Map<String, dynamic> json) => OcrResultModel(
+        isSuccess: json["isSuccess"],
+        errorMessage: json["errorMessage"],
+        imagePath: json["imagePath"],
+        ktp: Ktp.fromMap(json["ktp"]),
+      );
 
-  @override
-  String toString() {
-    return 'OCRResultModel(imagePath: $imagePath, confidence: $confidence, isSuccess: $isSuccess, errorMessage: $errorMessage, ktpData: $ktpData)';
-  }
+  Map<String, dynamic> toMap() => {
+        "isSuccess": isSuccess,
+        "errorMessage": errorMessage,
+        "imagePath": imagePath,
+        "ktp": ktp.toMap(),
+      };
+}
 
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
+class Ktp {
+  Ktp({
+    required this.nik,
+    required this.nama,
+    required this.tempatLahir,
+    required this.golDarah,
+    required this.tglLahir,
+    required this.jenisKelamin,
+    required this.alamat,
+    required this.rt,
+    required this.rw,
+    required this.kelurahan,
+    required this.kecamatan,
+    required this.agama,
+    required this.statusPerkawinan,
+    required this.pekerjaan,
+    required this.kewarganegaraan,
+    required this.berlakuHingga,
+    required this.provinsi,
+    required this.kabKot,
+    required this.confidence,
+  });
 
-    return other is OCRResultModel &&
-        other.imagePath == imagePath &&
-        other.confidence == confidence &&
-        other.isSuccess == isSuccess &&
-        other.errorMessage == errorMessage &&
-        other.ktpData == ktpData;
-  }
+  final String nik;
+  final String nama;
+  final String tempatLahir;
+  final String golDarah;
+  final String tglLahir;
+  final String jenisKelamin;
+  final String alamat;
+  final String rt;
+  final String rw;
+  final String kelurahan;
+  final String kecamatan;
+  final String agama;
+  final String statusPerkawinan;
+  final String pekerjaan;
+  final String kewarganegaraan;
+  final String berlakuHingga;
+  final String provinsi;
+  final String kabKot;
+  final int confidence;
 
-  @override
-  int get hashCode {
-    return imagePath.hashCode ^
-        confidence.hashCode ^
-        isSuccess.hashCode ^
-        errorMessage.hashCode ^
-        ktpData.hashCode;
-  }
+  factory Ktp.fromMap(Map<String, dynamic> json) => Ktp(
+        nik: json["nik"],
+        nama: json["nama"],
+        tempatLahir: json["tempatLahir"],
+        golDarah: json["golDarah"],
+        tglLahir: json["tglLahir"],
+        jenisKelamin: json["jenisKelamin"],
+        alamat: json["alamat"],
+        rt: json["rt"],
+        rw: json["rw"],
+        kelurahan: json["kelurahan"],
+        kecamatan: json["kecamatan"],
+        agama: json["agama"],
+        statusPerkawinan: json["statusPerkawinan"],
+        pekerjaan: json["pekerjaan"],
+        kewarganegaraan: json["kewarganegaraan"],
+        berlakuHingga: json["berlakuHingga"],
+        provinsi: json["provinsi"],
+        kabKot: json["kabKot"],
+        confidence: json["confidence"],
+      );
+
+  Map<String, dynamic> toMap() => {
+        "nik": nik,
+        "nama": nama,
+        "tempatLahir": tempatLahir,
+        "golDarah": golDarah,
+        "tglLahir": tglLahir,
+        "jenisKelamin": jenisKelamin,
+        "alamat": alamat,
+        "rt": rt,
+        "rw": rw,
+        "kelurahan": kelurahan,
+        "kecamatan": kecamatan,
+        "agama": agama,
+        "statusPerkawinan": statusPerkawinan,
+        "pekerjaan": pekerjaan,
+        "kewarganegaraan": kewarganegaraan,
+        "berlakuHingga": berlakuHingga,
+        "provinsi": provinsi,
+        "kabKot": kabKot,
+        "confidence": confidence,
+      };
 }

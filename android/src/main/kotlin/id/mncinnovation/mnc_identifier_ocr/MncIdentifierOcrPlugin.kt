@@ -52,8 +52,7 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
     if(requestCode == CAPTURE_EKTP_REQUEST_CODE){
       if (resultCode == Activity.RESULT_OK) {
         val captureKtpResult = MNCIdentifierOCR.getOCRResult(data)
-        val jsonString: String = Gson().toJson(captureKtpResult)
-        result.success(jsonString)
+        result.success(captureKtpResult?.toJson())
         return true
       }
     }
