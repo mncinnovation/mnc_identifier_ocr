@@ -6,6 +6,7 @@ A Flutter plugin for Android and iOS for scanning [KTP](https://en.wikipedia.org
 ### Android
 
 This plugin requires Android SDK 21 or higher.
+
 Add `CaptureOCRActivity` into your `AndroidManifest.xml`
 
 ```
@@ -15,6 +16,7 @@ Add `CaptureOCRActivity` into your `AndroidManifest.xml`
 ### iOS
 
 This plugin requires iOS 11.0 or higher.
+
 Add `NSCameraUsageDescription` key to your `info.plist` file. Describe why your app needs access to the camera. This is called Privacy - Camera Usage Description in the visual editor.
 
 ## Usage
