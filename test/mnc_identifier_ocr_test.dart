@@ -1,6 +1,5 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mnc_identifier_ocr/mnc_identifier_ocr.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('mnc_identifier_ocr');

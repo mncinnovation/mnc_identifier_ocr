@@ -11,7 +11,6 @@ class MncIdentifierOcr {
     try {
       final String? json = await _channel.invokeMethod('startCaptureKtp');
       log('json: $json');
-      //TODO add model
       if (json == null) {
         throw 'mnc-identifier-ocr: unexpected null data from scanner';
       }
