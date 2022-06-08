@@ -58,7 +58,6 @@ class Ktp {
     required this.berlakuHingga,
     required this.provinsi,
     required this.kabKot,
-    required this.confidence,
   });
 
   final String nik;
@@ -79,7 +78,6 @@ class Ktp {
   final String berlakuHingga;
   final String provinsi;
   final String kabKot;
-  final int confidence;
 
   factory Ktp.fromMap(Map<String, dynamic> json) => Ktp(
         nik: json["nik"],
@@ -100,7 +98,6 @@ class Ktp {
         berlakuHingga: json["berlakuHingga"],
         provinsi: json["provinsi"],
         kabKot: json["kabKot"],
-        confidence: json["confidence"],
       );
 
   Map<String, dynamic> toMap() => {
@@ -122,6 +119,5 @@ class Ktp {
         "berlakuHingga": berlakuHingga,
         "provinsi": provinsi,
         "kabKot": kabKot,
-        "confidence": confidence,
       };
 }

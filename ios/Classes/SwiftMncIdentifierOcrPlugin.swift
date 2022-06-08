@@ -32,7 +32,7 @@ public class SwiftMncIdentifierOcrPlugin: NSObject, OCRDelegate, FlutterPlugin {
 
   public func ocrResult(_ ktpResult: OCRResultModel!) {
     if let result = self.result {
-      result(parseToJson(ktpResult))
+      result(ktpResult.asJson)
     }
   }
 
