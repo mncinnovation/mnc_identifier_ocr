@@ -1,8 +1,8 @@
 import Flutter
-import OCR
+import MNCOCRIdentifier
 import UIKit
 
-public class SwiftMncIdentifierOcrPlugin: NSObject, OCRDelegate, FlutterPlugin {
+public class SwiftMncIdentifierOcrPlugin: NSObject, MNCOCRIdentifierDelegate, FlutterPlugin {
   var result: FlutterResult?
 
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -19,8 +19,9 @@ public class SwiftMncIdentifierOcrPlugin: NSObject, OCRDelegate, FlutterPlugin {
       let viewController = UIApplication.shared.keyWindow?.rootViewController
 
       if viewController != nil {
-        let client = OCRClient()
+        let client = MNCOCRIdentifierClient()
         client.delegate = self
+        client.isFlashEnable = true
         client.showOCRIdentifier(viewController!)
       } else {
         result(FlutterError(code: "Unexpected nil", message: "Mnc-identifier-ocr: Could not retrieve rootViewController", details: "Expected rootViewController to be not nil"))
@@ -30,14 +31,13 @@ public class SwiftMncIdentifierOcrPlugin: NSObject, OCRDelegate, FlutterPlugin {
     }
   }
 
-  public func ocrResult(_ ktpResult: OCRResultModel!) {
+  public func ocrResult(_ ktpResult: MNCOCRIdentifierResult?) {
     if let result = self.result {
-      result(ktpResult.asJson)
+       if ktpResult != nil {
+        result(ktpResult!.asJson())
+      } else {
+        result(FlutterError(code: "Unexpected nil", message: "Mnc-identifier-ocr: Could not retrieve KTP result", details: "Expected KTP result to be not nil"))
+      }
     }
-  }
-
-  func parseToJson(_ ktpResult: OCRResultModel!) -> String {
-    return
-      "{\"captureKtpResult\": {\"errorMessage\": \"Success\",\"imageUri\": {},\"isSuccess\": true,\"imgPath\": \(ktpResult.ktpPath), \"ktp\": {\"agama\": \"\(ktpResult.ktpData.agama)\",\"alamat\": \"\(ktpResult.ktpData.alamat)\",\"berlakuHingga\": \"\(ktpResult.ktpData.berlakuHingga)\",\"confidence\": 0,\"golDarah\": \"\(ktpResult.ktpData.golDarah)\",\"jenisKelamin\": \"\(ktpResult.ktpData.jenisKelamin)\",\"kabKot\": \"\(ktpResult.ktpData.kabkota)\",\"kecamatan\": \"\(ktpResult.ktpData.kecamatan)\",\"kelurahan\": \"\(ktpResult.ktpData.kelurahan)\",\"kewarganegaraan\": \"\(ktpResult.ktpData.kewarganegaraan)\",\"nama\": \"\(ktpResult.ktpData.nama)\",\"nik\": \"\(ktpResult.ktpData.nik)\",\"pekerjaan\": \"\(ktpResult.ktpData.pekerjaan)\",\"provinsi\": \"\(ktpResult.ktpData.provinsi)\",\"rt\": \"\(ktpResult.ktpData.rt)\",\"rw\": \"\(ktpResult.ktpData.rw)\",\"statusPerkawinan\": \"\(ktpResult.ktpData.statusPerkawinan)\",\"tempatLahir\": \"\(ktpResult.ktpData.tempatLahir)\",\"tglLahir\": \"\(ktpResult.ktpData.tanggalLahir)\"}}}"
   }
 }
