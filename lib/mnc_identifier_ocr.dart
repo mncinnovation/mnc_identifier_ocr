@@ -6,9 +6,11 @@ import 'package:mnc_identifier_ocr/model/ocr_result_model.dart';
 class MncIdentifierOcr {
   static const MethodChannel _channel = MethodChannel('mnc_identifier_ocr');
 
-  static Future<OcrResultModel> get startCaptureKtp async {
+  static Future<OcrResultModel> startCaptureKtp(
+      {bool withFlash = false}) async {
     try {
-      final String? json = await _channel.invokeMethod('startCaptureKtp');
+      final String? json = await _channel
+          .invokeMethod('startCaptureKtp', {'withFlash': withFlash});
       if (json == null) {
         throw 'mnc-identifier-ocr: unexpected null data from scanner';
       }

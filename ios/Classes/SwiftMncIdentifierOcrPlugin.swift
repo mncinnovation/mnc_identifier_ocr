@@ -19,9 +19,15 @@ public class SwiftMncIdentifierOcrPlugin: NSObject, MNCOCRIdentifierDelegate, Fl
       let viewController = UIApplication.shared.keyWindow?.rootViewController
 
       if viewController != nil {
+        //get argument from flutter
+        var withFlash: Bool = false
+        if let args = call.arguments as? Dictionary<String, Any> {
+          withFlash = (args["withFlash"] as? Bool) ?? false 
+        } 
+        
         let client = MNCOCRIdentifierClient()
         client.delegate = self
-        client.isFlashEnable = true
+        client.isFlashEnable = withFlash
         client.showOCRIdentifier(viewController!)
       } else {
         result(FlutterError(code: "Unexpected nil", message: "Mnc-identifier-ocr: Could not retrieve rootViewController", details: "Expected rootViewController to be not nil"))

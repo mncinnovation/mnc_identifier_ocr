@@ -42,7 +42,10 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
     this.result = result
 
     if (call.method == "startCaptureKtp") {
-      MNCIdentifierOCR.startCapture(activity, true, CAPTURE_EKTP_REQUEST_CODE)
+      //get argument from flutter
+      val withFlash: Boolean? = call.argument("withFlash")
+
+      MNCIdentifierOCR.startCapture(activity, withFlash?:false, CAPTURE_EKTP_REQUEST_CODE)
     } else {
       result.notImplemented()
     }
@@ -54,6 +57,9 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
         val captureKtpResult = MNCIdentifierOCR.getOCRResult(data)
         result.success(captureKtpResult?.toJson())
         return true
+      } else if(resultCode == Activity.RESULT_CANCELED){
+        result.error("Canceled by user", "Mnc-identifier-ocr: activity canceled by user", "")
+        return  false
       }
     }
     result.error("Invalid request code", "Mnc-identifier-ocr: Received request code: $requestCode", "Expected request code: $CAPTURE_EKTP_REQUEST_CODE")
