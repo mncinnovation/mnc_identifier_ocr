@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flutter/services.dart';
 import 'package:mnc_identifier_ocr/model/ocr_result_model.dart';
@@ -10,7 +9,6 @@ class MncIdentifierOcr {
   static Future<OcrResultModel> get startCaptureKtp async {
     try {
       final String? json = await _channel.invokeMethod('startCaptureKtp');
-      log('json: $json');
       if (json == null) {
         throw 'mnc-identifier-ocr: unexpected null data from scanner';
       }
