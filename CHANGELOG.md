@@ -1,3 +1,7 @@
+## 1.0.1
+
+Change image in readme to abs url
+
 ## 1.0.0
 
 Release stable version
