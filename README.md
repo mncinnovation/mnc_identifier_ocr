@@ -1,5 +1,7 @@
 # MNC Identifier OCR
 
+![banner_ocr](/screenshoots/banner_ocr.jpeg)
+
 A Flutter plugin for Android and iOS for scanning [KTP](https://en.wikipedia.org/wiki/Indonesian_identity_card)
 
 ## Installation
@@ -21,7 +23,7 @@ Add `NSCameraUsageDescription` key to your `info.plist` file. Describe why your 
 
 ## Usage
 
-```
+```dart
 import 'package:mnc_identifier_ocr/mnc_identifier_ocr.dart';
 import 'package:mnc_identifier_ocr/model/ocr_result_model.dart';
 
