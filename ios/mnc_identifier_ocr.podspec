@@ -16,7 +16,7 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
 
-  s.dependency 'MNCIdentifier/OCR', '1.0.1'
+  s.dependency 'MNCIdentifier/OCR', '1.0.2'
   s.dependency 'GoogleMLKit/TextRecognition', '2.3.0'
   s.dependency 'GoogleMLKit/ObjectDetection', '2.3.0'
 
