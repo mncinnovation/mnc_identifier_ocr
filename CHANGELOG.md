@@ -9,3 +9,7 @@
 ## 1.0.2
 
 * Native dependencies upgrades.
+
+## 1.0.3
+
+* README.md banner.
