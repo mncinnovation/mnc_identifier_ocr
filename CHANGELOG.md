@@ -1,3 +1,11 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+* First release MNC identifier OCR.
+
+## 1.0.1
+
+* Updated README.md
+
+## 1.0.2
+
+* Native dependencies upgrades.
