@@ -1,6 +1,6 @@
 # MNC Identifier OCR
 
-![banner_ocr](/screenshoots/banner_ocr.jpeg)
+![banner_ocr](https://raw.githubusercontent.com/mncinnovation/mnc_identifier_ocr/main/screenshoots/banner_ocr.jpeg)
 
 A Flutter plugin for Android and iOS for scanning [KTP](https://en.wikipedia.org/wiki/Indonesian_identity_card)
 
