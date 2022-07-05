@@ -13,3 +13,7 @@
 ## 1.0.3
 
 * README.md banner.
+
+## 1.0.4
+
+* Added `cameraOnly` parameter to the calling function

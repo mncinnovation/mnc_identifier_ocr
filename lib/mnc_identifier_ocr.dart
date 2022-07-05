@@ -7,10 +7,10 @@ class MncIdentifierOcr {
   static const MethodChannel _channel = MethodChannel('mnc_identifier_ocr');
 
   static Future<OcrResultModel> startCaptureKtp(
-      {bool withFlash = false}) async {
+      {bool withFlash = false, bool cameraOnly = false}) async {
     try {
-      final String? json = await _channel
-          .invokeMethod('startCaptureKtp', {'withFlash': withFlash});
+      final String? json = await _channel.invokeMethod('startCaptureKtp',
+          {'withFlash': withFlash, 'cameraOnly': cameraOnly});
       if (json == null) {
         throw 'mnc-identifier-ocr: unexpected null data from scanner';
       }

@@ -44,8 +44,13 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
     if (call.method == "startCaptureKtp") {
       //get argument from flutter
       val withFlash: Boolean? = call.argument("withFlash")
+      val cameraOnly: Boolean? = call.argument("cameraOnly")
 
-      MNCIdentifierOCR.startCapture(activity, withFlash?:false, CAPTURE_EKTP_REQUEST_CODE)
+      print("cameraOnly")
+      print(cameraOnly)
+
+      MNCIdentifierOCR.config(withFlash, cameraOnly)
+      MNCIdentifierOCR.startCapture(activity, CAPTURE_EKTP_REQUEST_CODE)
     } else {
       result.notImplemented()
     }

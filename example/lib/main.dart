@@ -21,7 +21,8 @@ class _MyAppState extends State<MyApp> {
   Future<void> scanKtp() async {
     OcrResultModel? res;
     try {
-      res = await MncIdentifierOcr.startCaptureKtp(withFlash: true);
+      res = await MncIdentifierOcr.startCaptureKtp(
+          withFlash: true, cameraOnly: true);
     } catch (e) {
       debugPrint('something goes wrong $e');
     }
