@@ -17,3 +17,7 @@
 ## 1.0.4
 
 * Added `cameraOnly` parameter to the calling function
+
+## 1.0.5
+
+* Updated README.md

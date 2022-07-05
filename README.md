@@ -31,7 +31,7 @@ import 'package:mnc_identifier_ocr/model/ocr_result_model.dart';
 
  Future<void> scanKtp() async {
     try {
-      OcrResultModel res = await MncIdentifierOcr.startCaptureKtp(withFlash: true);
+      OcrResultModel res = await MncIdentifierOcr.startCaptureKtp(withFlash: true, cameraOnly: true);
       debugPrint('result: ${res.toString()}');
     } catch (e) {
       debugPrint('something goes wrong $e');
