@@ -21,3 +21,7 @@
 ## 1.0.5
 
 * Updated README.md
+
+## 1.0.6
+
+* Updated native android dependency version
