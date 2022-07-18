@@ -25,3 +25,7 @@
 ## 1.0.6
 
 * Updated native android dependency version
+
+## 1.0.7
+
+* Updated native ios dependency version
