@@ -13,10 +13,10 @@ class OcrResultModel {
     required this.ktp,
   });
 
-  final bool isSuccess;
-  final String errorMessage;
-  final String imagePath;
-  final Ktp ktp;
+  final bool? isSuccess;
+  final String? errorMessage;
+  final String? imagePath;
+  final Ktp? ktp;
 
   factory OcrResultModel.fromJson(String source) =>
       OcrResultModel.fromMap(json.decode(source));
@@ -34,7 +34,7 @@ class OcrResultModel {
         "isSuccess": isSuccess,
         "errorMessage": errorMessage,
         "imagePath": imagePath,
-        "ktp": ktp.toMap(),
+        "ktp": ktp?.toMap(),
       };
 }
 
@@ -60,24 +60,24 @@ class Ktp {
     required this.kabKot,
   });
 
-  final String nik;
-  final String nama;
-  final String tempatLahir;
-  final String golDarah;
-  final String tglLahir;
-  final String jenisKelamin;
-  final String alamat;
-  final String rt;
-  final String rw;
-  final String kelurahan;
-  final String kecamatan;
-  final String agama;
-  final String statusPerkawinan;
-  final String pekerjaan;
-  final String kewarganegaraan;
-  final String berlakuHingga;
-  final String provinsi;
-  final String kabKot;
+  final String? nik;
+  final String? nama;
+  final String? tempatLahir;
+  final String? golDarah;
+  final String? tglLahir;
+  final String? jenisKelamin;
+  final String? alamat;
+  final String? rt;
+  final String? rw;
+  final String? kelurahan;
+  final String? kecamatan;
+  final String? agama;
+  final String? statusPerkawinan;
+  final String? pekerjaan;
+  final String? kewarganegaraan;
+  final String? berlakuHingga;
+  final String? provinsi;
+  final String? kabKot;
 
   factory Ktp.fromMap(Map<String, dynamic> json) => Ktp(
         nik: json["nik"],
