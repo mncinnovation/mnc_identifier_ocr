@@ -36,4 +36,4 @@
 
 ## 1.0.9
 
-* changed model to nullable data
+* update native ios lib
