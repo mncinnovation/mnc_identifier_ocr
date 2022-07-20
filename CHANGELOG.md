@@ -37,3 +37,7 @@
 ## 1.0.9
 
 * update native ios lib
+
+## 1.0.10
+
+* update changelog
