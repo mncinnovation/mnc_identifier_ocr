@@ -30,6 +30,10 @@
 
 * Updated native ios dependency version
 
-## 1.0.7
+## 1.0.8
+
+* changed model to nullable data
+
+## 1.0.9
 
 * changed model to nullable data

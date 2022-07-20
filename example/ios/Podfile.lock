@@ -77,8 +77,8 @@ PODS:
     - Flutter
     - GoogleMLKit/ObjectDetection (= 2.3.0)
     - GoogleMLKit/TextRecognition (= 2.3.0)
-    - MNCIdentifier/OCR (= 1.1.0)
-  - MNCIdentifier/OCR (1.1.0):
+    - MNCIdentifier/OCR (= 1.1.1)
+  - MNCIdentifier/OCR (1.1.1):
     - GoogleMLKit/ObjectDetection (= 2.3.0)
     - GoogleMLKit/TextRecognition (= 2.3.0)
   - nanopb (2.30909.0):
@@ -138,8 +138,8 @@ SPEC CHECKSUMS:
   MLKitTextRecognitionCommon: 923315fc744326806d1a1355899be55320182454
   MLKitVision: 26da299aef93291f24f5200e8372919f73abf3b5
   MLKitVisionKit: 226bac429eda1d84285409e31ce9da72606850fb
-  mnc_identifier_ocr: f8904fa9c0f7072dba66f3004dbab6e6fff8587d
-  MNCIdentifier: dc1ad82b1ad88a37d6cabfee4d989e82d8dabe81
+  mnc_identifier_ocr: 1293898d8d76621e873986971d139681215156a6
+  MNCIdentifier: 32ed512124c63fdbc5c6ef98e03944ae3109b9d9
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   Protobuf: 818c6a87e44193a77f56b87c6a1c106efda7e062
