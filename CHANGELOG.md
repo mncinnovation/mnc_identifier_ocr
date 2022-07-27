@@ -1,3 +1,7 @@
+## 1.0.12
+
+* android: fix image picker crash caused by mnc ocr
+
 ## 1.0.11
 
 * iOS: work only on device
