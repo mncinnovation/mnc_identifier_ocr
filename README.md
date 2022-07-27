@@ -38,5 +38,6 @@ import 'package:mnc_identifier_ocr/model/ocr_result_model.dart';
     }
   }
 ```
-
+  
+  Note: on iOS, this plugin only works on real device
 

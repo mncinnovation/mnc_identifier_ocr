@@ -16,7 +16,7 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
 
-  s.dependency 'MNCIdentifier/OCR', '1.1.1'
+  s.dependency 'MNCIdentifier/OCR', '1.1.0'
   s.dependency 'GoogleMLKit/TextRecognition', '2.3.0'
   s.dependency 'GoogleMLKit/ObjectDetection', '2.3.0'
 
@@ -24,6 +24,6 @@ A new flutter plugin project.
   s.static_framework = true
 
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386 arm64' }
   s.swift_version = '5.0'
 end

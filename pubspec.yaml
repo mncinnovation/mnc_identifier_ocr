@@ -1,6 +1,6 @@
 name: mnc_identifier_ocr
 description: MNC Flutter plugin KTP scanner for iOS and Android.
-version: 1.0.10
+version: 1.0.11
 homepage: https://github.com/mncinnovation/mnc_identifier_ocr
 
 environment:
