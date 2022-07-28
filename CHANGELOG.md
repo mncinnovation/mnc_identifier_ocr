@@ -1,3 +1,7 @@
+## 1.0.13
+
+* android: fix reply already submitted
+
 ## 1.0.12
 
 * android: fix image picker crash caused by mnc ocr

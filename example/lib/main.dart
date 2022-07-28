@@ -57,16 +57,20 @@ class _MyAppState extends State<MyApp> {
         body: Stack(
           children: [
             Text('Ktp data: ${result?.toJson()}'),
-            Column(
-              children: [
-                ElevatedButton(
-                    onPressed: scanKtp, child: const Text('PUSH HERE')),
-                const SizedBox(height: 8),
-                ElevatedButton(onPressed: _imgCmr, child: const Text('CAMERA')),
-                const SizedBox(height: 8),
-                ElevatedButton(
-                    onPressed: _imgGlr, child: const Text('GALLERY')),
-              ],
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                      onPressed: scanKtp, child: const Text('PUSH HERE')),
+                  const SizedBox(height: 8),
+                  ElevatedButton(
+                      onPressed: _imgCmr, child: const Text('CAMERA')),
+                  const SizedBox(height: 8),
+                  ElevatedButton(
+                      onPressed: _imgGlr, child: const Text('GALLERY')),
+                ],
+              ),
             ),
           ],
         ),
