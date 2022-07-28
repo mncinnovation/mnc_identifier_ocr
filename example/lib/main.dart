@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'dart:async';
 import 'package:mnc_identifier_ocr/mnc_identifier_ocr.dart';
 import 'package:mnc_identifier_ocr/model/ocr_result_model.dart';
@@ -34,6 +35,18 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
+  _imgGlr() async {
+    final XFile? image =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
+    debugPrint('path: ${image?.path}');
+  }
+
+  _imgCmr() async {
+    final XFile? image =
+        await ImagePicker().pickImage(source: ImageSource.camera);
+    debugPrint('path: ${image?.path}');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -44,9 +57,17 @@ class _MyAppState extends State<MyApp> {
         body: Stack(
           children: [
             Text('Ktp data: ${result?.toJson()}'),
-            Center(
-                child: ElevatedButton(
-                    onPressed: scanKtp, child: const Text('PUSH HERE')))
+            Column(
+              children: [
+                ElevatedButton(
+                    onPressed: scanKtp, child: const Text('PUSH HERE')),
+                const SizedBox(height: 8),
+                ElevatedButton(onPressed: _imgCmr, child: const Text('CAMERA')),
+                const SizedBox(height: 8),
+                ElevatedButton(
+                    onPressed: _imgGlr, child: const Text('GALLERY')),
+              ],
+            ),
           ],
         ),
       ),

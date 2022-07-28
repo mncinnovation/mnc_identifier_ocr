@@ -26,7 +26,7 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
   private lateinit var channel : MethodChannel
   private lateinit var context: Context
   private lateinit var activity: Activity
-  private  var result: Result? = null
+  private var result: Result? = null
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "mnc_identifier_ocr")
@@ -51,9 +51,11 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
 
       MNCIdentifierOCR.config(withFlash, cameraOnly)
       MNCIdentifierOCR.startCapture(activity, CAPTURE_EKTP_REQUEST_CODE)
-    } else {
-      result.notImplemented()
     }
+  }
+
+ fun clearMethodCallAndResult() {
+    this.result = null
   }
 
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
@@ -61,13 +63,16 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
       if (resultCode == Activity.RESULT_OK) {
         val captureKtpResult = MNCIdentifierOCR.getOCRResult(data)
         result?.success(captureKtpResult?.toJson())
+        clearMethodCallAndResult()
         return true
       } else if(resultCode == Activity.RESULT_CANCELED){
         result?.error("Canceled by user", "Mnc-identifier-ocr: activity canceled by user", "")
+        clearMethodCallAndResult()
         return  false
       }
     }
     result?.error("Invalid request code", "Mnc-identifier-ocr: Received request code: $requestCode", "Expected request code: $CAPTURE_EKTP_REQUEST_CODE")
+    clearMethodCallAndResult()
     return false
   }
 
