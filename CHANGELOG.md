@@ -1,3 +1,7 @@
+## 1.0.14
+
+* android: onDetachedFromActivity crash fix
+
 ## 1.0.13
 
 * android: fix reply already submitted

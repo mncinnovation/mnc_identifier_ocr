@@ -27,6 +27,7 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
   private lateinit var context: Context
   private lateinit var activity: Activity
   private var result: Result? = null
+  private var activityPluginBinding: ActivityPluginBinding? = null
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "mnc_identifier_ocr")
@@ -94,6 +95,7 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
   }
 
   override fun onDetachedFromActivity() {
-    TODO("Not yet implemented")
+      activityPluginBinding?.removeActivityResultListener(this)
+      activityPluginBinding = null
   }
 }
