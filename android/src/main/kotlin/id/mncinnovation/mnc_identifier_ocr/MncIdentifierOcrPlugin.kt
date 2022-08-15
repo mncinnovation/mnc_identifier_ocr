@@ -83,15 +83,16 @@ class MncIdentifierOcrPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, P
 
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {
     activity = binding.getActivity()
+    this.activityPluginBinding = binding
     binding.addActivityResultListener(this)
   }
 
   override fun onDetachedFromActivityForConfigChanges() {
-    TODO("Not yet implemented")
+    onDetachedFromActivity()
   }
 
   override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-    TODO("Not yet implemented")
+    onAttachedToActivity(binding)
   }
 
   override fun onDetachedFromActivity() {
