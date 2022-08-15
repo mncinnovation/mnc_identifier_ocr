@@ -1,5 +1,9 @@
 ## 1.0.14
 
+* android: added more override functions
+
+## 1.0.14
+
 * android: onDetachedFromActivity crash fix
 
 ## 1.0.13
