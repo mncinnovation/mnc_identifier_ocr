@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'mnc_identifier_ocr'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = 'MNC OCR identifier flutter plugin'
   s.description      = <<-DESC
 A new flutter plugin project.
@@ -16,7 +16,7 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
 
-  s.dependency 'MNCIdentifier/OCR', '1.1.7'
+  s.dependency 'MNCIdentifier/OCR', '1.1.8'
   s.dependency 'GoogleMLKit/TextRecognition', '4.0.0'
   s.dependency 'GoogleMLKit/ObjectDetection', '4.0.0'
 

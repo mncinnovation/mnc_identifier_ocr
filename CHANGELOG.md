@@ -1,3 +1,7 @@
+## 1.0.19
+
+- iOS: Update Depedencies Version
+
 ## 1.0.18
 
 - Depedencies Bump Version
