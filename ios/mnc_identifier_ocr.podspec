@@ -4,21 +4,21 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'mnc_identifier_ocr'
-  s.version          = '0.0.1'
+  s.version          = '0.0.5'
   s.summary          = 'MNC OCR identifier flutter plugin'
   s.description      = <<-DESC
 A new flutter plugin project.
                        DESC
   s.homepage         = 'https://github.com/mncinnovation/mnc_identifier_ocr'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Gifhary Syidhqa Hamim' => 'gifhary.hamim@mncgroup.com' }
+  s.author           = { 'Gifhary Syidhqa Hamim' => 'gifhary.hamim@mncgroup.com', 'Ari Fajrianda Alfi' => 'ari.alfi@mncgroup.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
 
-  s.dependency 'MNCIdentifier/OCR', '1.1.0'
-  s.dependency 'GoogleMLKit/TextRecognition', '2.3.0'
-  s.dependency 'GoogleMLKit/ObjectDetection', '2.3.0'
+  s.dependency 'MNCIdentifier/OCR', '1.1.8'
+  s.dependency 'GoogleMLKit/TextRecognition', '4.0.0'
+  s.dependency 'GoogleMLKit/ObjectDetection', '4.0.0'
 
   s.platform = :ios, '11.0'
   s.static_framework = true

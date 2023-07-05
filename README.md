@@ -5,6 +5,26 @@
 A Flutter plugin for Android and iOS for scanning [KTP](https://en.wikipedia.org/wiki/Indonesian_identity_card)
 
 ## Installation
+
+### Add dependency
+
+You can use the command to add MNC Identifier OCR as a dependency with the latest stable version:
+
+```console
+$ dart pub add mnc_identifier_ocr
+```
+
+Or you can manually add MNC Identifier OCR into the dependencies section in your pubspec.yaml:
+
+```yaml
+dependencies:
+  mnc_identifier_ocr: ^replace-with-latest-version
+```
+
+The latest version is: **1.0.17**
+
+## Additional Steps
+
 ### Android
 
 This plugin requires Android SDK 21 or higher.
@@ -38,6 +58,5 @@ import 'package:mnc_identifier_ocr/model/ocr_result_model.dart';
     }
   }
 ```
-  
-  Note: on iOS, this plugin only works on real device
 
+Note: on iOS, this plugin only works on real device
