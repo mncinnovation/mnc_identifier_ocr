@@ -21,7 +21,7 @@ dependencies:
   mnc_identifier_ocr: ^replace-with-latest-version
 ```
 
-The latest version is: **1.0.17**
+The latest version is: **1.0.20**
 
 ## Additional Steps
 
