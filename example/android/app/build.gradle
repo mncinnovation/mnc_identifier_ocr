@@ -57,6 +57,7 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    namespace 'id.mncinnovation.mnc_identifier_ocr_example'
 }
 
 flutter {
