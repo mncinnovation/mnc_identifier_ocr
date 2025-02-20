@@ -1,3 +1,7 @@
+## 1.0.21
+
+- iOS: Update Depedencies Version
+
 ## 1.0.20
 
 - Bump up dependencies version for Android and iOS

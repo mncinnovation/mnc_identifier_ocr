@@ -37,7 +37,7 @@ Add `CaptureOCRActivity` into your `AndroidManifest.xml`
 
 ### iOS
 
-This plugin requires iOS 11.0 or higher.
+This plugin requires iOS 12.0 or higher and **only working on real device**.
 
 Add `NSCameraUsageDescription` key to your `info.plist` file. Describe why your app needs access to the camera. This is called Privacy - Camera Usage Description in the visual editor.
 

@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'mnc_identifier_ocr'
-  s.version          = '0.0.6'
+  s.version          = '0.0.7'
   s.summary          = 'MNC OCR identifier flutter plugin'
   s.description      = <<-DESC
 A new flutter plugin project.
@@ -16,11 +16,11 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
 
-  s.dependency 'MNCIdentifier/OCR', '1.1.10'
-  s.dependency 'GoogleMLKit/TextRecognition', '4.0.0'
-  s.dependency 'GoogleMLKit/ObjectDetection', '4.0.0'
+  s.dependency 'MNCIdentifier/OCR', '1.1.12'
+  s.dependency 'GoogleMLKit/TextRecognition', '6.0.0'
+  s.dependency 'GoogleMLKit/ObjectDetection', '6.0.0'
 
-  s.platform = :ios, '11.0'
+  s.platform = :ios, '12.0'
   s.static_framework = true
 
   # Flutter.framework does not contain a i386 slice.

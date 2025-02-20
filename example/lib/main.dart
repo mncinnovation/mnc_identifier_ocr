@@ -22,7 +22,8 @@ class _MyAppState extends State<MyApp> {
   Future<void> scanKtp() async {
     OcrResultModel? res;
     try {
-      res = await MncIdentifierOcr.startCaptureKtp(withFlash: true, cameraOnly: true);
+      res = await MncIdentifierOcr.startCaptureKtp(
+          withFlash: true, cameraOnly: true);
     } catch (e) {
       debugPrint('something goes wrong $e');
     }
@@ -35,12 +36,14 @@ class _MyAppState extends State<MyApp> {
   }
 
   _imgGlr() async {
-    final XFile? image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    final XFile? image =
+        await ImagePicker().pickImage(source: ImageSource.gallery);
     debugPrint('path: ${image?.path}');
   }
 
   _imgCmr() async {
-    final XFile? image = await ImagePicker().pickImage(source: ImageSource.camera);
+    final XFile? image =
+        await ImagePicker().pickImage(source: ImageSource.camera);
     debugPrint('path: ${image?.path}');
   }
 
@@ -58,11 +61,12 @@ class _MyAppState extends State<MyApp> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(onPressed: scanKtp, child: const Text('PUSH HERE')),
+                  ElevatedButton(
+                      onPressed: scanKtp, child: const Text('PUSH HERE')),
                   const SizedBox(height: 8),
-                  ElevatedButton(onPressed: _imgCmr, child: const Text('CAMERA')),
+                  const ElevatedButton(onPressed: null, child: Text('CAMERA')),
                   const SizedBox(height: 8),
-                  ElevatedButton(onPressed: _imgGlr, child: const Text('GALLERY')),
+                  const ElevatedButton(onPressed: null, child: Text('GALLERY')),
                 ],
               ),
             ),
