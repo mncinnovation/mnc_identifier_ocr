@@ -21,7 +21,7 @@ dependencies:
   mnc_identifier_ocr: ^replace-with-latest-version
 ```
 
-The latest version is: **1.0.17**
+The latest version is: **1.0.20**
 
 ## Additional Steps
 
@@ -37,7 +37,7 @@ Add `CaptureOCRActivity` into your `AndroidManifest.xml`
 
 ### iOS
 
-This plugin requires iOS 11.0 or higher.
+This plugin requires iOS 12.0 or higher and **only working on real device**.
 
 Add `NSCameraUsageDescription` key to your `info.plist` file. Describe why your app needs access to the camera. This is called Privacy - Camera Usage Description in the visual editor.
 
